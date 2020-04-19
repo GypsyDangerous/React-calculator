@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
+:root{
+  --orange: #e8833e;
+  --text-color: #f0f0f0;
+  --background-color: #303030;
+  --main-box-shadow: 5px 5px 10px #1f1f1f, 
+             -5px -5px 10px #414141;
+  --clicked-box-shadow: inset 5px 5px 10px #1f1f1f, 
+             inset -5px -5px 10px #414141;
+  --button-size: 90px;
+  --button-gap: calc(var(--button-size) / 8);
+  --main-width: calc(var(--button-size) * 4 + var(--button-size) / 2);
+  --long-button: calc(var(--button-size) * 2 + (var(--button-size) / 8));
+  --button-text-size: 3rem;
+  --transition: .3s ease
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.light{
+  --text-color: #616161;
+  --background-color: #e3e0ed;
+  --main-box-shadow: 5px 5px 10px #94929a, 
+             -5px -5px 10px #ffffff;
+  --clicked-box-shadow: inset 5px 5px 10px #94929a, 
+             inset -5px -5px 10px #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 600px){
+  :root{
+  --button-size: 70px;
+  --button-text-size: 2rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (max-width: 400px){
+  :root{
+  --button-size: 60px;
+  --button-text-size: 1.5rem;
+  }
+}
+
+.App{
+  font-family: 'Gruppo', cursive;
+  font-weight: bold;
+  background: var(--background-color);
+  box-shadow: var(--main-box-shadow);
+  width: fit-content;
+  padding: 1rem;
+  transition: var(--transition);
+  border-radius: 2rem;
+}
+
+.App *{
+  transition: inherit;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100vw;
+  height: 100vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: #57606f;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -1,0 +1,45 @@
+.button-box{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--button-gap);
+    width: var(--main-width)
+}
+
+.div{
+  font-family: "helvetica";
+  color: var(--text-color);
+  font-size: var(--button-text-size);
+  width: var(--button-size);
+  height: var(--button-size);
+  background: var(--background-color);
+  border: none;
+  outline: none;
+
+  border-radius: var(--button-size);
+  box-shadow:  var(--main-box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div:active{
+  
+  box-shadow:var(--clicked-box-shadow); 
+  font-size: calc(var(--button-text-size) * 0.95);
+}
+
+.double{
+  width: var(--long-button);
+  grid-column: 1/3;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+
+.right{
+  color: var(--orange);
+}
+
+.equals{
+  background: var(--orange);
+  color: var(--text-color);
+}
